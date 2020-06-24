@@ -25,7 +25,7 @@ SO THAT I can keep track of my workouts.
 
   Visit the following link for deployed application:
 
-  [Fitness-Tracker Application](https://frozen-beach-67804.herokuapp.com//)
+  [Fitness-Tracker Application](https://still-reaches-68354.herokuapp.com/)
 
 
   ## Demo of Application
@@ -37,6 +37,10 @@ SO THAT I can keep track of my workouts.
   ![Image of Fitness Tracker](/public/fitness-tracker-preview2.png)
   
   *Image of Fitness Tracker Application*
+
+  ![Demo of Fitness Tracker](/public/fitness-tracker.gif)
+  
+  *Demo of Fitness Tracker Application*
 
   ## Questions
   
