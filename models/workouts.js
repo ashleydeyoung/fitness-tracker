@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
+//set up schema
 const WorkoutSchema = new Schema({
     day: {
         type: Date,
@@ -40,7 +41,7 @@ const WorkoutSchema = new Schema({
   
 },
 {
-    //virtual
+    //required for virtual
     toJSON: {
       virtuals: true
     }
@@ -55,7 +56,7 @@ const WorkoutSchema = new Schema({
 //     }
 //   };
 
-
+//virtual for total duration 
 WorkoutSchema.virtual("totalDuration").get(function() {
     let total = 0;
     exercisesArr = this.exercises
@@ -66,6 +67,7 @@ WorkoutSchema.virtual("totalDuration").get(function() {
     return total
   });
 
+//virtual for total weight lifted
 WorkoutSchema.virtual("totalWeight").get(function() {
     let total = 0;
     exercisesArr = this.exercises
@@ -76,7 +78,7 @@ WorkoutSchema.virtual("totalWeight").get(function() {
     return total
   
 });
-
+//virtual for total sets performed 
 WorkoutSchema.virtual("totalSets").get(function() {
     let total = 0;
     exercisesArr = this.exercises
