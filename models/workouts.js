@@ -36,8 +36,35 @@ const WorkoutSchema = new Schema({
             }
           
         }
-  ]
-});
+  ],
+  
+},
+{
+    //virtual
+    toJSON: {
+      virtuals: true
+    }
+  }
+);
+
+// WorkoutSchema.methods.getTotalDuration = function() {
+//     exercisesArray = this.exercises;
+//     newTotalDuration = this.totalDuration = 0;
+//     for (let i = 0; i < exercisesArray.length; i++) {
+//          newTotalDuration += exercisesArray[i].duration 
+//     }
+//   };
+
+
+WorkoutSchema.virtual("totalDuration").get(function() {
+    let total = 0;
+    exercisesArr = this.exercises
+    // console.log(exercisesArr)
+    for (let i = 0; i < exercisesArr.length; i++) {
+       total += exercisesArr[i].duration;
+    }
+    return total
+  });
 
 const Workout = mongoose.model("Workout", WorkoutSchema);
 

@@ -19,16 +19,9 @@ app.use(express.static("public"));
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
 
 require("./controllers/html-routes.js")(app);
+require("./controllers/api-routes.js")(app);
 
-app.get("/api/workouts", (req, res) => {
-  db.Workout.find({}).populate("exercise")
-    .then(dbWorkout => {
-      res.json(dbWorkout);
-    })
-    .catch(err => {
-      res.json(err);
-    });
-});
+
 
 
 
