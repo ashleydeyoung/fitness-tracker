@@ -66,6 +66,29 @@ WorkoutSchema.virtual("totalDuration").get(function() {
     return total
   });
 
+WorkoutSchema.virtual("totalWeight").get(function() {
+    let total = 0;
+    exercisesArr = this.exercises
+    
+    for (let i = 0; i < exercisesArr.length; i++) {
+       total += exercisesArr[i].weight;
+    }
+    return total
+  
+});
+
+WorkoutSchema.virtual("totalSets").get(function() {
+    let total = 0;
+    exercisesArr = this.exercises
+    
+    for (let i = 0; i < exercisesArr.length; i++) {
+       total += exercisesArr[i].sets;
+    }
+    return total
+  
+});
+
+
 const Workout = mongoose.model("Workout", WorkoutSchema);
 
 module.exports = Workout;
