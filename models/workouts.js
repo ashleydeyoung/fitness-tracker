@@ -48,14 +48,6 @@ const WorkoutSchema = new Schema({
   }
 );
 
-// WorkoutSchema.methods.getTotalDuration = function() {
-//     exercisesArray = this.exercises;
-//     newTotalDuration = this.totalDuration = 0;
-//     for (let i = 0; i < exercisesArray.length; i++) {
-//          newTotalDuration += exercisesArray[i].duration 
-//     }
-//   };
-
 //virtual for total duration 
 WorkoutSchema.virtual("totalDuration").get(function() {
     let total = 0;
